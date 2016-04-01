@@ -4,12 +4,13 @@ let parking = angular.module('parking', []);
 
 parking.controller("parkingCtrl", function ($scope) {
   $scope.cars = [
-    {plate: '32JR3'},
-    {plate: '52HR4'},
-    {plate: '78UI1'}
+    {plate: '32JR3', dateParked: new Date()},
+    {plate: '52HR4', dateParked: new Date()},
+    {plate: '78UI1', dateParked: new Date()}
   ];
   $scope.park = function (car) {
-    $scope.cars.push(angular.copy(car));
+    car.dateParked = new Date();
+    $scope.cars.push(car);
     delete $scope.car;
   };
 });

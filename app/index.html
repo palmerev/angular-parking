@@ -17,7 +17,10 @@
       <tbody>
         <tr ng-repeat="car in cars">
           <td>
-            {{car.plate}}
+            {{car.plate}}:
+          </td>
+          <td>
+            {{car.dateParked || "date unknown"}}
           </td>
         </tr>
       </tbody>
