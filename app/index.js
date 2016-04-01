@@ -2,7 +2,8 @@ import angular from 'angular';
 
 let parking = angular.module('parking', []);
 
-parking.controller("parkingCtrl", function ($scope) {
+parking.controller('parkingCtrl', function ($scope) {
+  $scope.appTitle = 'Parki-ng'
   $scope.cars = [
     {plate: '32JR3', dateParked: new Date()},
     {plate: '52HR4', dateParked: new Date()},
