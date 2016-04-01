@@ -1,0 +1,8 @@
+td {
+  border: 1px solid #AAA;
+  border-collapse: collapse;
+}
+
+.selected {
+  background-color: #DDD;
+}

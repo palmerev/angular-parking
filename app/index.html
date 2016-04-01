@@ -10,12 +10,16 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>Plate</th>
           <th>Date Parked</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="car in cars">
+        <tr
+          ng-class="{selected: car.selected}"
+          ng-repeat="car in cars">
+          <td><input type="checkbox" ng-model="car.selected"/></td>
           <td><span ng-bind="car.plate"></span></td>
           <td><span ng-bind="car.dateParked||'unknown'"><span></td>
         </tr>
