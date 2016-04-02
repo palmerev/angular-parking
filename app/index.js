@@ -19,15 +19,8 @@ parking.controller('parkingCtrl', function parkingCtrl($scope) {
 
 parking.directive("alert", function () {
   return {
-    template: [
-      "<div class='alert'>",
-        "<span class='alert-topic'>",
-          "Something went wrong!",
-        "</span>",
-        "<span class='alert-description'>",
-          "You must give the license plate number and color of the car.",
-        "</span>",
-      "</div>"
-    ].join("")
+    templateUrl: 'alert.html',
+    replace: true,
+    restrict: 'E'
   };
 });
