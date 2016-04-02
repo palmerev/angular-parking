@@ -1,13 +1,14 @@
 import angular from 'angular';
 
-let parking = angular.module('parking', []);
+const parking = angular.module('parking', []);
 
-parking.controller('parkingCtrl', function ($scope) {
-  $scope.appTitle = 'Parki-ng'
+parking.controller('parkingCtrl', function parkingCtrl($scope) {
+  $scope.appTitle = 'Parki-ng';
+  $scope.colors = ['White', 'Black', 'Blue', 'Red', 'Silver'];
   $scope.cars = [
-    {plate: '32JR3', dateParked: new Date()},
-    {plate: '52HR4', dateParked: new Date()},
-    {plate: '78UI1', dateParked: new Date()}
+    { plate: '32JR3', dateParked: new Date(), color: 'default' },
+    { plate: '52HR4', dateParked: new Date(), color: 'default' },
+    { plate: '78UI1', dateParked: new Date(), color: 'default' }
   ];
   $scope.park = function (car) {
     car.dateParked = new Date();

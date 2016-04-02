@@ -12,6 +12,7 @@
         <tr>
           <th></th>
           <th>Plate</th>
+          <th>Color</th>
           <th>Date Parked</th>
         </tr>
       </thead>
@@ -21,6 +22,7 @@
           ng-repeat="car in cars">
           <td><input type="checkbox" ng-model="car.selected"/></td>
           <td><span ng-bind="car.plate"></span></td>
+          <td><span ng-bind="car.color" ng-style="{color: car.color}"></span></td>
           <td><span ng-bind="car.dateParked||'unknown'"><span></td>
         </tr>
       </tbody>
@@ -28,7 +30,10 @@
     <input type="text"
       ng-model="car.plate"
       placeholder="What's the license plate number?"/>
-    <button ng-click="park(car)" ng-disabled="!car.plate">Park</button>
+    <select ng-model="car.color" ng-options="color for color in colors">
+      Pick a color
+    </select>
+    <button ng-click="park(car)" ng-disabled="!car.plate || !car.color">Park</button>
   </body>
   <script src="bundle.js" charset="utf-8"></script>
 </html>
