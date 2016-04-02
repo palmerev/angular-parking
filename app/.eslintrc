@@ -1,0 +1,24 @@
+{
+  "extends" : [
+    "eslint:recommended"
+  ],
+  "env"     : {
+    "browser" : true
+  },
+  "rules": {
+    "semi" : [2, "always"],
+    "max-len": [2, 160, 2],
+    "no-var": 2
+  },
+  "globals": {
+    "$scope": true,
+    "$route": false,
+    "$http": false
+  },
+  {
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": 0
+      }
+  }
+}
