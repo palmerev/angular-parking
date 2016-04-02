@@ -21,6 +21,10 @@ parking.directive("alert", function () {
   return {
     templateUrl: 'alert.html',
     replace: true,
-    restrict: 'E'
+    restrict: 'E',
+    scope: {
+      topic: '@topic',
+      description: '@description'
+    }
   };
 });
