@@ -1,0 +1,31 @@
+{
+  "extends" : [
+    "eslint:recommended"
+  ],
+  "env"     : {
+    "browser" : true,
+    "es6": true
+  },
+  "rules": {
+    "semi" : ["error", "always"],
+    "max-len": ["error", 160, 2],
+    "no-var": "error",
+    "no-constant-condition": "warn",
+    "curly": "error",
+    "default-case": "error",
+    "eqeqeq": "warn",
+    "no-floating-decimal": "error",
+
+  },
+  "globals": {
+    "$scope": true,
+    "$route": false,
+    "$http": false
+  },
+  {
+    "parser": "babel-eslint",
+    "rules": {
+        "strict": "always"
+      }
+  }
+}
