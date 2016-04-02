@@ -4,8 +4,12 @@ const parking = angular.module('parking', []);
 
 parking.controller('parkingCtrl', function parkingCtrl($scope) {
   $scope.appTitle = 'Parki-ng';
+  $scope.showAlert = true;
   $scope.alertTopic = 'Something went WRONG!';
   $scope.alertDescription = 'You must give the license plate number and color of the car';
+  $scope.closeAlert = function () {
+    $scope.showAlert = false;
+  }
   $scope.colors = ['Black', 'Blue', 'Red', 'Silver'];
   $scope.cars = [
     { plate: '32JR3', dateParked: new Date(), color: 'Blue' },
@@ -23,10 +27,11 @@ parking.directive("alert", function () {
   return {
     templateUrl: 'alert.html',
     replace: true,
+    transclude: true,
     restrict: 'E',
     scope: {
-      topic: '=topic',
-      description: '=description'
+      topic: '@topic',
+      close: '&close'
     }
   };
 });

@@ -7,9 +7,12 @@
   </head>
   <body ng-controller="parkingCtrl">
     <alert
-      topic="alertTopic"
-      description="alertDescription"
-    ></alert>
+      ng-show="showAlert"
+      topic="Something went wrong! Oh no!"
+      close="closeAlert()"
+    >
+      You must give the license plate number and color of the car.
+    </alert>
     <h3 ng-bind="appTitle"></h3>
     <div
       ng-if="cars.length > 0"
